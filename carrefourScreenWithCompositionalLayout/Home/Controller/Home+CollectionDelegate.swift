@@ -8,23 +8,7 @@
 import UIKit
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    enum collection{
-        case category
-        case secCategory
-        case item
-        
-        //        var collection: String{
-        //            switch self{
-        //            case .category:
-        //                return "CategoryCollectionViewCell"
-        //            case .secCategory:
-        //                return "SecCategoryCollectionViewCell"
-        //            case .item:
-        //                return "ItemsCollectionViewCell"
-        //            }
-        //        }
-    }
-    
+  
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -49,13 +33,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
             return cell
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
-    
+    } 
 }
 
 
