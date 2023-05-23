@@ -21,12 +21,11 @@ class HomeViewController: UIViewController {
     }
      
     private func createLayout() -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
-            guard let self = self else { return nil }
+        UICollectionViewCompositionalLayout {sectionIndex, layoutEnvironment in
             switch sectionIndex{
             case 0:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(150), heightDimension: .estimated(133)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .absolute(155), heightDimension: .estimated(133)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
                 section.interGroupSpacing = 10
@@ -45,7 +44,6 @@ class HomeViewController: UIViewController {
                 item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 5)
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(233)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
-//                section.orthogonalScrollingBehavior = .none
                 section.interGroupSpacing = 20
                 section.contentInsets = .init(top: 0, leading: 5, bottom: 10, trailing: 5)
                 return section
